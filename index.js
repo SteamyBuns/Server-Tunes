@@ -55,6 +55,15 @@ if (LOAD_SLASH) {
 else {
     client.on("ready", () => {
         console.log(`Logged in as ${client.user.tag}`)
+
+        // let guilds = client.guilds.cache.size;
+        client.user.setPresence({
+            activity: {
+                name: 'Server Tunes!',
+                type: "PLAYING"
+            },
+            status: 'dnd'
+        })
     })
     client.on("interactionCreate", (interaction) => {
         async function handleCommand() {
